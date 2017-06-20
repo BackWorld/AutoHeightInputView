@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="InputView" customModule="InputViewDemo" customModuleProvider="target">
+            <connections>
+                <outlet property="actionBtn" destination="VMs-uu-h5Y" id="DHW-cY-w5x"/>
+                <outlet property="clearBtn" destination="gpo-2O-pyl" id="cDH-Qg-3NH"/>
+                <outlet property="placeholderLabel" destination="gSM-DX-d4x" id="CRZ-r4-zky"/>
+                <outlet property="textView" destination="e36-ag-GOk" id="m7m-Dk-t8j"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="67"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="e36-ag-GOk">
+                    <rect key="frame" x="10" y="10" width="285" height="47"/>
+                    <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
+                    <edgeInsets key="layoutMargins" top="0.0" left="0.0" bottom="0.0" right="0.0"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                    <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
+                    <connections>
+                        <outlet property="delegate" destination="-1" id="xFz-DJ-HaP"/>
+                    </connections>
+                </textView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="请输入内容" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gSM-DX-d4x">
+                    <rect key="frame" x="20" y="23.5" width="82" height="20"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VMs-uu-h5Y">
+                    <rect key="frame" x="305" y="23" width="60" height="34"/>
+                    <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="34" id="Rdg-UF-KbO"/>
+                        <constraint firstAttribute="width" constant="60" id="vj1-IC-2PN"/>
+                    </constraints>
+                    <state key="normal" title="发送">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="actionForButtonClicked:" destination="-1" eventType="touchUpInside" id="wIl-hx-sRz"/>
+                    </connections>
+                </button>
+                <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gpo-2O-pyl">
+                    <rect key="frame" x="270" y="10" width="15" height="47"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="15" id="PDu-eU-imD"/>
+                    </constraints>
+                    <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    <state key="normal" image="icon_input_clear"/>
+                    <connections>
+                        <action selector="actionForButtonClicked:" destination="-1" eventType="touchUpInside" id="LR7-zk-Oqm"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="bottomMargin" secondItem="e36-ag-GOk" secondAttribute="bottom" id="3hf-zp-GVx"/>
+                <constraint firstItem="gpo-2O-pyl" firstAttribute="centerY" secondItem="e36-ag-GOk" secondAttribute="centerY" id="5Fj-VZ-zUv"/>
+                <constraint firstItem="e36-ag-GOk" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leadingMargin" id="8yG-bz-8s1"/>
+                <constraint firstItem="gpo-2O-pyl" firstAttribute="height" secondItem="e36-ag-GOk" secondAttribute="height" id="91c-m9-4w9"/>
+                <constraint firstItem="gSM-DX-d4x" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="AXO-cy-xVr"/>
+                <constraint firstAttribute="trailingMargin" secondItem="VMs-uu-h5Y" secondAttribute="trailing" id="IMn-Eo-U1J"/>
+                <constraint firstItem="VMs-uu-h5Y" firstAttribute="bottom" secondItem="e36-ag-GOk" secondAttribute="bottom" id="bmK-bF-p7Z"/>
+                <constraint firstItem="e36-ag-GOk" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="topMargin" id="ewZ-r0-uM3"/>
+                <constraint firstItem="gSM-DX-d4x" firstAttribute="leading" secondItem="e36-ag-GOk" secondAttribute="leading" constant="10" id="hZR-Y3-H9D"/>
+                <constraint firstItem="e36-ag-GOk" firstAttribute="trailing" secondItem="gpo-2O-pyl" secondAttribute="trailing" constant="10" id="khD-Qm-BTo"/>
+                <constraint firstItem="gpo-2O-pyl" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="gSM-DX-d4x" secondAttribute="trailing" constant="10" id="l8x-3U-nc9"/>
+                <constraint firstItem="VMs-uu-h5Y" firstAttribute="leading" secondItem="e36-ag-GOk" secondAttribute="trailing" constant="10" id="vpe-qO-sqW"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <edgeInsets key="layoutMargins" top="10" left="10" bottom="10" right="10"/>
+            <point key="canvasLocation" x="-49" y="-219"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="icon_input_clear" width="15" height="15"/>
+    </resources>
+</document>
